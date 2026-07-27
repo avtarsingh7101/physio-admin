@@ -7,20 +7,7 @@ import {
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, Timestamp } from 'firebase/firestore';
 import * as Notifications from 'expo-notifications';
-import * as TaskManager from 'expo-task-manager';
 
-const BACKGROUND_TASK = 'BACKGROUND_NOTIFICATION_TASK';
-
-// Define background task for notifications when app is killed
-TaskManager.defineTask(BACKGROUND_TASK, ({ data, error }) => {
-  if (error) return;
-  const { notification } = data;
-  // App can be woken up here — no UI but OS shows the notification
-  return Promise.resolve();
-});
-
-// Background notification handler — fires when app is in background/killed
-Notifications.registerTaskAsync(BACKGROUND_TASK).catch(() => {});
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
