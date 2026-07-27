@@ -1,24 +1,35 @@
 {
   "expo": {
-    "name": "physio-admin",
+    "name": "PhysioHub Admin",
     "slug": "physio-admin",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
+      "package": "com.tricityphysiohub.admin",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+        "backgroundColor": "#1a365d"
+      },
+      "permissions": [
+        "INTERNET",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ]
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#1a365d"
+        }
+      ]
+    ],
+    "extra": {
+      "apiUrl": "https://tricityphysiohub.in",
+      "eas": {
+        "projectId": "8e57bbf8-0538-43b0-864b-4fe93bab8d46"
+      }
     }
   }
 }
